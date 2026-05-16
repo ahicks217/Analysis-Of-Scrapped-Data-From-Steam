@@ -73,13 +73,11 @@ The scraper and API tools collect information such as:
 * Popularity rankings
 * Game metadata
 * Store information
-
 The project demonstrates how scraped datasets can be transformed into structured and searchable information for analysis purposes.
 
 ---
 
 # Installation & Setup
-
 ## 1. Clone the Repository
 ```
 git clone https://github.com/ahicks217/Analysis-Of-Scrapped-Data-From-Steam.git
@@ -87,7 +85,6 @@ cd Analysis-Of-Scrapped-Data-From-Steam
 ```
 
 ## 2. Create a Virtual Environment
-
 ### Windows
 ```
 python -m venv venv
@@ -115,7 +112,6 @@ pip install django beautifulsoup4 requests
 ---
 
 ## 4. Run Database Migrations
-
 ```
 python manage.py migrate
 ```
@@ -123,11 +119,9 @@ python manage.py migrate
 ---
 
 ## 5. Start the Development Server
-
 ```
 python manage.py runserver
 ```
-
 Then open:
 ```
 http://127.0.0.1:8000/
@@ -136,32 +130,25 @@ http://127.0.0.1:8000/
 ---
 
 # Running the Scraper
-
 Navigate to the scraper directory and execute the desired script.
 Example:
 ```
 python scraper.py
 ```
-
 or
-
 ```
 python steamapi.py
 ```
-
 The generated CSV files can then be imported into the Django database for analysis.
 
 ---
 
 # Educational Objectives
-
 This project was created to fulfill the requirements of:
-
 * ECT 437
 * ECT 438
 
 The capstone demonstrates practical application of:
-
 * Full-stack web development
 * Database integration
 * Data scraping techniques
@@ -171,7 +158,6 @@ The capstone demonstrates practical application of:
 ---
 
 # Future Improvements
-
 Potential future enhancements include:
 * Interactive data visualizations
 * Machine learning analysis of Steam trends
@@ -192,8 +178,8 @@ This project was inspired by various public Steam analytics and scraping project
 * **Alex Hicks**
 * **Mahad Osman**
 * **Aseel Ibrahim**
-## Senior Capstone Project
-## ECT 437 & ECT 438
+### Senior Capstone Project
+### ECT 437 & ECT 438
 
 Student GitHub:
 [https://git.indstate.edu/ahicks39](https://git.indstate.edu/ahicks39)
