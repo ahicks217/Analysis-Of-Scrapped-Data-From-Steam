@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Steam Game Lookup</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #aaa;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Steam Game Lookup</h1>
+
+<form method="GET">
+    <input 
+        type="text"
+        id="liveSearch"
+        name="q"
+        placeholder="Search for a game"
+        value="{{ request.GET.q|default:'' }}"
+        style="width: 300px; padding: 8px;"
+    >
+
+    <button type="submit" style="padding: 8px 16px;">Search</button>
+
+    {% if request.GET.q %}
+        <a href="/" style="margin-left: 10px;">Clear</a>
+    {% endif %}
+</form>
+
+<table id="gamesTable">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Metacritic</th>
+            <th>Developer</th>
+            <th>Publisher</th>
+            <th>Release Date</th>
+            <th>Price</th>
+            <th>DRM</th>
+        </tr>
+    </thead>
+
+<tbody>
+{% for game in steam_data %}
+<tr>
+    <td>{{ game.id }}</td>
+    <td>{{ game.name }}</td>
+    <td>{{ game.metacritic_score|default:"N/A" }}</td>
+
+    <td>
+        {% for dev in game.developers.all %}
+            {{ dev.name }}{% if not forloop.last %}, {% endif %}
+        {% empty %}
+            N/A
+        {% endfor %}
+    </td>
+
+    <td>
+        {% for pub in game.publishers.all %}
+            {{ pub.name }}{% if not forloop.last %}, {% endif %}
+        {% empty %}
+            N/A
+        {% endfor %}
+    </td>
+
+    <td>{{ game.release_date|default:"N/A" }}</td>
+
+    <td>
+        {% for p in game.pricing.all %}
+            ${{ p.price_display }}
+        {% empty %}
+            N/A
+        {% endfor %}
+    </td>
+
+    <td>
+        {% if game.has_drm is True %}
+            Yes
+        {% elif game.has_drm is False %}
+            No
+        {% else %}
+            Unknown
+        {% endif %}
+    </td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+<!-- LIVE SEARCH SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const input = document.getElementById("liveSearch");
+    const rows = document.querySelectorAll("#gamesTable tbody tr");
+
+    input.addEventListener("keyup", function () {
+        const filter = input.value.toLowerCase();
+
+        rows.forEach(row => {
+            const text = row.innerText.toLowerCase();
+            row.style.display = text.includes(filter) ? "" : "none";
+        });
+    });
+
+});
+</script>
+
+</body>
+</html>
