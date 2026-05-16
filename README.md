@@ -192,13 +192,11 @@ This project was inspired by various public Steam analytics and scraping project
 
 # Authors
 
-```
-**Alex Hicks**
-**Mahad Osman**
-**Aseel Ibrahim**
+* **Alex Hicks**
+* **Mahad Osman**
+* **Aseel Ibrahim**
 Senior Capstone Project
 ECT 437 & ECT 438
-```
 
 Student GitHub:
 [https://git.indstate.edu/ahicks39](https://git.indstate.edu/ahicks39)
