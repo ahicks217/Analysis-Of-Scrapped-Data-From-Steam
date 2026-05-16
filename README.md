@@ -173,7 +173,6 @@ The capstone demonstrates practical application of:
 # Future Improvements
 
 Potential future enhancements include:
-
 * Interactive data visualizations
 * Machine learning analysis of Steam trends
 * User authentication system
@@ -185,18 +184,16 @@ Potential future enhancements include:
 ---
 
 # Research & Inspiration
-
 This project was inspired by various public Steam analytics and scraping projects that demonstrate real-world data engineering and analytics workflows.
 
 ---
 
 # Authors
-
 * **Alex Hicks**
 * **Mahad Osman**
 * **Aseel Ibrahim**
-### Senior Capstone Project
-### ECT 437 & ECT 438
+## Senior Capstone Project
+## ECT 437 & ECT 438
 
 Student GitHub:
 [https://git.indstate.edu/ahicks39](https://git.indstate.edu/ahicks39)
