@@ -1,124 +1,220 @@
-# Analysis of Scrapped Data from Steam
+# Analysis-Of-Scrapped-Data-From-Steam
 
-# Getting Started
+A senior capstone project developed for **ECT 437** and **ECT 438** under the instruction of Jeff Kinne.
 
-# Create a venv
+This project focuses on collecting, organizing, and analyzing data scraped from the Steam gaming platform using Python, Django, and web scraping technologies. The application stores game-related data in a database and presents the information through a web interface for analysis and visualization.
+
+## Repository
+
+[https://github.com/ahicks217/Analysis-Of-Scrapped-Data-From-Steam](https://github.com/ahicks217/Analysis-Of-Scrapped-Data-From-Steam)
+
+---
+
+# Project Overview
+
+The purpose of this capstone project is to demonstrate the process of:
+
+* Web scraping live gaming data from Steam
+* Cleaning and organizing collected datasets
+* Storing data in a relational database
+* Building a Django web application for displaying and analyzing results
+* Exploring trends and statistics within Steam game data
+
+The project combines concepts from:
+
+* Data Collection
+* Data Processing
+* Database Management
+* Web Development
+* Data Analysis
+* Software Engineering
+
+Steam is one of the largest digital gaming platforms in the world, making it a strong source for real-world data analysis projects. Similar Steam data scraping and analytics projects are commonly used in data engineering and analytics portfolios.
+
+---
+
+# Technologies Used
+
+## Backend
+
+* Python 3
+* Django
+* SQLite3
+
+## Web Scraping & Data Processing
+
+* BeautifulSoup4
+* Requests
+* CSV Processing
+* Steam API
+
+## Frontend
+
+* HTML5
+* CSS3
+* JavaScript
+
+## Development Tools
+
+* Visual Studio Code
+* Git & GitHub
+
+---
+
+# Features
+
+* Scrapes Steam game data from online sources
+* Stores scraped data in a local database
+* Displays game information through Django templates
+* Uses CSV datasets for additional processing
+* Includes migration support through Django ORM
+* Organized MVC-style project architecture
+* Provides reusable scraping scripts for future expansion
+
+---
+
+# Data Collected
+
+The scraper and API tools collect information such as:
+
+* Game titles
+* Steam App IDs
+* Ratings and reviews
+* Popularity rankings
+* Game metadata
+* Store information
+
+The project demonstrates how scraped datasets can be transformed into structured and searchable information for analysis purposes.
+
+---
+
+# Installation & Setup
+
+## 1. Clone the Repository
+
+```
+git clone https://github.com/ahicks217/Analysis-Of-Scrapped-Data-From-Steam.git
+cd Analysis-Of-Scrapped-Data-From-Steam
+```
+
+## 2. Create a Virtual Environment
+
+### Windows
+
+```
 python -m venv venv
-
-# Activate
 venv\Scripts\activate
+```
 
-# Install dependencies
-pip install django pandas numpy requests beautifulsoup4 tqdm
-Database Setup;
-python manage.py makemigrations
+### macOS/Linux
+
+```
+python3 -m venv venv
+source venv/bin/activate
+```
+
+---
+
+## 3. Install Dependencies
+
+```
+ip install -r requirements.txt
+```
+
+If no requirements file exists yet, install manually:
+
+```
+pip install django beautifulsoup4 requests
+```
+
+---
+
+## 4. Run Database Migrations
+
+```
 python manage.py migrate
+```
 
-Open Django Shell;
-python manage.py shell
+---
 
+## 5. Start the Development Server
 
-from steam_app.models import SteamGame
-
-game = SteamGame(
-    id=12345,
-    name="Example Game",
-    type="game",
-    dlc="N/A",
-    platform_windows=True,
-    platform_mac=False,
-    platform_linux=False,
-    release_date="Jan 1, 2024",
-    coming_soon=False,
-    is_free=False,
-    required_age=0,
-    controller_support="full",
-    demos="N/A",
-    metacritic_score=85
-)
-
-
-then
-game.save()
-
-
-Verify DB Entry
-SteamGame.objects.all()
-
-exit()
-and run app
+```
 python manage.py runserver
+```
 
+Then open:
 
+```
+http://127.0.0.1:8000/
+```
 
-## Integrate with your tools
+---
 
-- [ ] [Set up project integrations](https://git.indstate.edu/ect-437-fall-2025/analysis-of-scrapped-data-from-steam/-/settings/integrations)
+# Running the Scraper
 
-## Collaborate with your team
+Navigate to the scraper directory and execute the desired script.
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+Example:
 
-## Test and Deploy
+```
+python scraper.py
+```
 
-Use the built-in continuous integration in GitLab.
+or
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+```
+python steamapi.py
+```
 
-***
+The generated CSV files can then be imported into the Django database for analysis.
 
-# Editing this README
+---
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+# Educational Objectives
 
-## Suggestions for a good README
+This project was created to fulfill the requirements of:
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+* ECT 437
+* ECT 438
 
-## Name
-Choose a self-explaining name for your project.
+The capstone demonstrates practical application of:
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+* Full-stack web development
+* Database integration
+* Data scraping techniques
+* Data organization and visualization
+* Software project planning and documentation
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+---
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+# Future Improvements
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+Potential future enhancements include:
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+* Interactive data visualizations
+* Machine learning analysis of Steam trends
+* User authentication system
+* REST API integration
+* Automated scheduled scraping
+* Cloud deployment
+* Advanced filtering and search tools
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+---
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+# Research & Inspiration
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+This project was inspired by various public Steam analytics and scraping projects that demonstrate real-world data engineering and analytics workflows.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+---
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+# Authors
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+**Alex Hicks**
+**Mahad Osman**
+**Aseel Ibrahim**
+Senior Capstone Project
+ECT 437 & ECT 438
 
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+Student GitHub:
+[https://git.indstate.edu/ahicks39](https://git.indstate.edu/ahicks39)
