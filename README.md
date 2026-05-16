@@ -11,9 +11,7 @@ This project focuses on collecting, organizing, and analyzing data scraped from 
 ---
 
 # Project Overview
-
 The purpose of this capstone project is to demonstrate the process of:
-
 * Web scraping live gaming data from Steam
 * Cleaning and organizing collected datasets
 * Storing data in a relational database
@@ -21,7 +19,6 @@ The purpose of this capstone project is to demonstrate the process of:
 * Exploring trends and statistics within Steam game data
 
 The project combines concepts from:
-
 * Data Collection
 * Data Processing
 * Database Management
@@ -36,33 +33,28 @@ Steam is one of the largest digital gaming platforms in the world, making it a s
 # Technologies Used
 
 ## Backend
-
 * Python 3
 * Django
 * SQLite3
 
 ## Web Scraping & Data Processing
-
 * BeautifulSoup4
 * Requests
 * CSV Processing
 * Steam API
 
 ## Frontend
-
 * HTML5
 * CSS3
 * JavaScript
 
 ## Development Tools
-
 * Visual Studio Code
 * Git & GitHub
 
 ---
 
 # Features
-
 * Scrapes Steam game data from online sources
 * Stores scraped data in a local database
 * Displays game information through Django templates
@@ -74,9 +66,7 @@ Steam is one of the largest digital gaming platforms in the world, making it a s
 ---
 
 # Data Collected
-
 The scraper and API tools collect information such as:
-
 * Game titles
 * Steam App IDs
 * Ratings and reviews
@@ -91,7 +81,6 @@ The project demonstrates how scraped datasets can be transformed into structured
 # Installation & Setup
 
 ## 1. Clone the Repository
-
 ```
 git clone https://github.com/ahicks217/Analysis-Of-Scrapped-Data-From-Steam.git
 cd Analysis-Of-Scrapped-Data-From-Steam
@@ -100,14 +89,12 @@ cd Analysis-Of-Scrapped-Data-From-Steam
 ## 2. Create a Virtual Environment
 
 ### Windows
-
 ```
 python -m venv venv
 venv\Scripts\activate
 ```
 
 ### macOS/Linux
-
 ```
 python3 -m venv venv
 source venv/bin/activate
@@ -116,13 +103,11 @@ source venv/bin/activate
 ---
 
 ## 3. Install Dependencies
-
 ```
 ip install -r requirements.txt
 ```
 
 If no requirements file exists yet, install manually:
-
 ```
 pip install django beautifulsoup4 requests
 ```
@@ -144,7 +129,6 @@ python manage.py runserver
 ```
 
 Then open:
-
 ```
 http://127.0.0.1:8000/
 ```
@@ -154,9 +138,7 @@ http://127.0.0.1:8000/
 # Running the Scraper
 
 Navigate to the scraper directory and execute the desired script.
-
 Example:
-
 ```
 python scraper.py
 ```
@@ -210,11 +192,13 @@ This project was inspired by various public Steam analytics and scraping project
 
 # Authors
 
+```
 **Alex Hicks**
 **Mahad Osman**
 **Aseel Ibrahim**
 Senior Capstone Project
 ECT 437 & ECT 438
+```
 
 Student GitHub:
 [https://git.indstate.edu/ahicks39](https://git.indstate.edu/ahicks39)
